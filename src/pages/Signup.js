@@ -35,14 +35,14 @@ export default class Signup extends Component {
             this.setState({
                 error: null
             }, ()=> {
-                this.props.history.push("/user/profile")
+                this.props.history.push("/user/profile")  // this is a second argument which is a callback function
             })
         })
         .catch((error)=> {
-            this.setState({error: error.response && error.response.data})
+            this.setState({error: error.response && error.response.data})   // just checking if there even is a response so we don't end up with "can't read property data of null/undefined" error thingie
         })
     }
-
+    
     render() {
         return (
         <DefaultLayout>
